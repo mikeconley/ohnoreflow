@@ -3,9 +3,9 @@ Oh no! Reflow! is a WebExtension to help front-end Firefox engineers detect unin
 
 # Installation
 
-First, it is necessary to install the Experimental Reflow WebExtension API. For now, [that's hosted here](https://github.com/mikeconley/reflow-api), and must be done in `about:debugging` manually as a temporary add-on. I'll have this posted to AMO soon though.
+First, it is necessary to install the Experimental Reflow WebExtension API. For now, [that's hosted here](https://github.com/mikeconley/reflow-api), and must be done in `about:debugging` manually as a temporary add-on. 
 
-Next, install this add-on. Again, until this is hosted on AMO, this will have to be done as a temporary add-on from `about:debugging`. This should put a toolbar button in the nav bar which will have a badge that increases count as more uninterruptible reflows are detected in the browser UI.
+Next, install this add-on. Again, until this is signed and hosted somewhere more convenient, this will have to be done as a temporary add-on from `about:debugging`. This should put a toolbar button in the nav bar which will have a badge that increases count as more uninterruptible reflows are detected in the browser UI.
 
 # TODO
 
