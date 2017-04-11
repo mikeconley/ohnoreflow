@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Oh no! Reflow!",
-  "version": "0.1",
+  "version": "0.2",
   "description": "A tool for detecting and recording reflow in the browser front-end code.",
   "background": {
     "scripts": ["background.js"]
@@ -14,7 +14,8 @@
   "applications": {
     "gecko": {
       "id": "ohnoreflow@mikeconley.ca",
-      "strict_min_version": "52.0"
+      "strict_min_version": "52.0",
+      "update_url": "https://raw.githubusercontent.com/mikeconley/ohnoreflow/master/docs/update.rdf"
     }
   },
   "permissions": [

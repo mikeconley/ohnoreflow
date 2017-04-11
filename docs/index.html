@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Oh no! Reflow!</title>
+</head>
+<body>
+<p>
+  This extension is a tool for detecting uninterruptible reflows in the Firefox UI.
+</p>
+<p>
+  See <a href="https://github.com/mikeconley/ohnoreflow">the README.md file</a> for more details.
+</p>
+<p>
+  <h1>Install</h1>
+  <ol>
+    <li>First, install the <a href="https://mikeconley.github.io/reflow-api/">Reflow API WebExtension Experiment Add-on</a></li>
+    <li>Next, install <a id="install" href="https://raw.githubusercontent.com/mikeconley/ohnoreflow/master/ohnoreflow.xpi">Oh no! Reflow!</a></li>
+  </ol>
+</p>
+</body>
+
+<script>
+
+addEventListener("load", function() {
+  var install = document.getElementById("install");
+  install.addEventListener("click", function(e) {
+    if (window.InstallTrigger) {
+      window.InstallTrigger.install({ "Oh no! Reflow!": install.href });
+      e.preventDefault();
+    }
+  });
+});
+
+</script>
+</html>

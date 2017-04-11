@@ -1,3 +1,3 @@
 #!/bin/bash
 
-zip -r ohnoreflow.xpi . -x *.git* -x .DS_Store
+zip -r ohnoreflow.xpi . -x *.git* -x .DS_Store -x docs/*
