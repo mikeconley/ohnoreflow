@@ -1,0 +1,32 @@
+body {
+  font: message-box;
+}
+
+table {
+  border: 1px solid #999999;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead > tr {
+  background-color: #7990c8;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+   background-color: #EEEEEE;
+}
+
+td.disabled {
+  color: #AAAAAA;
+}
+
+#reset {
+  margin-bottom: 15px;
+  float: right;
+}
+
+#native-reflow:target {
+  color: #FF0000;
+}

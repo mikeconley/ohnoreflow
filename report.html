@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="report.css">
+  <title>Oh no! Reflow! Report!</title>
+</head>
+<body>
+  <div id="status">Fetching reports...</div>
+  <button id="reset">Reset</button>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Reflow time</th>
+        <th>Number of frames (coming soon!)</th>
+        <th>Stack</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+
+  <footer>
+    <a id="native-reflow" name="note-on-native-reflow">
+      <p>
+        <strong>Note:</strong> Native reflows are caused by our C++ layer, and we can't show stacks for those here. Consider attaching a debugger to the main process: the Reflow Observer API WebExtension Experiment will break automatically if it detects an uninterruptible reflow with a debugger attached.
+      </p>
+    </a>
+  </footer>
+</body>
+
+<script src="report.js"></script>
+</html>
