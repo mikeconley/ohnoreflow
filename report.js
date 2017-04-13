@@ -20,8 +20,8 @@ const ReflowReport = {
   init() {
     this.$reset.addEventListener("click", this);
 
-    browser.runtime.sendMessage({ name: "get-reflows" }).then(reflows => {
-      if (!reflows || reflows.length == 0) {
+    browser.runtime.sendMessage("get-reflows").then(reflows => {
+      if (!reflows) {
         this.$status.textContent = "No reflows detected. Hooray!";
       } else {
         this.reflows = reflows;
@@ -77,7 +77,7 @@ const ReflowReport = {
 
   reset() {
     if (confirm("Get rid of recordings so far? The report will remain open.")) {
-      browser.runtime.sendMessage({ name: "reset" });
+      browser.runtime.sendMessage("reset");
     }
   },
 

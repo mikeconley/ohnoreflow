@@ -1,0 +1,39 @@
+html, body {
+  font: message-box;
+  width: 250px;
+}
+
+#toggle {
+  display: none;
+}
+
+label[for="toggle"] {
+  display: inline-block;
+  padding: 15px;
+  border: 1px solid #444444;
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #888888;
+  color: #FFFFFF;
+}
+
+#toggle:checked ~ label[for="toggle"] {
+  background-color: #00AA00;
+}
+
+#toggle:checked ~ label[for="toggle"] > .disabled,
+#toggle:not(:checked) ~ label[for="toggle"] > .enabled {
+  display: none;
+}
+
+#controls[enabled="true"] > .for-disabled,
+#controls:not([enabled="true"]) > .for-enabled {
+  display: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 5px;
+  width: 100%;
+}

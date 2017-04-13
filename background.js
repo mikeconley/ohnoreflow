@@ -1,28 +1,78 @@
-let reflowLog = [];
-
-function updateBadge() {
-  browser.browserAction.setBadgeText({
-    text: reflowLog.length.toString(),
+function reflowListener(windowId, start, stop, stack) {
+  OhNoReflow.reflow({
+    windowId, start, stop, stack
   });
 }
 
-browser.reflows.onUninterruptableReflow.addListener((windowId, start, stop, stack) => {
-  reflowLog.push({
-    windowId, start, stop, stack
-  });
-  updateBadge();
-});
+const OhNoReflow = {
+  reflowLog: [],
 
-browser.runtime.onMessage.addListener((msg, sender, sendReply) => {
-  switch(msg) {
-    case "get-reflows": {
-      sendReply(reflowLog);
-      break;
+  _enabled: false,
+  set enabled(val) {
+    if (val) {
+      browser.reflows.onUninterruptableReflow.addListener(reflowListener);
+    } else {
+      browser.reflows.onUninterruptableReflow.removeListener(reflowListener);
+      this.reflowLog = [];
     }
-    case "reset": {
-      reflowLog = [];
-      updateBadge();
-      break;
+    this._enabled = val;
+  },
+
+  get enabled() {
+    return this._enabled;
+  },
+
+  init() {
+    browser.runtime.onMessage.addListener(this.messageListener.bind(this));
+    this.toggle(true);
+  },
+
+  messageListener(msg, sender, sendReply) {
+    switch(msg.name) {
+      case "get-reflows": {
+        sendReply(this.reflowLog);
+        break;
+      }
+      case "reset": {
+        this.reset();
+        break;
+      }
+      case "is-enabled": {
+        sendReply(this.enabled);
+        break;
+      }
+      case "toggle": {
+        this.toggle(msg.enabled);
+        break;
+      }
     }
-  }
-});
+  },
+
+  reflow(reflowData) {
+    this.reflowLog.push(reflowData);
+    this.updateBadge();
+  },
+
+  reset() {
+    this.reflowLog = [];
+    this.updateBadge();
+  },
+
+  toggle(enabled) {
+    if (this.enabled != enabled) {
+      this.enabled = enabled;
+      this.reset();
+      let iconSuffix = this.enabled ? "on" : "off";
+      let path = `icons/toolbar_${iconSuffix}.png`;
+      console.log("Setting badge icon to " + path);
+      browser.browserAction.setIcon({ path });
+    }
+  },
+
+  updateBadge() {
+    let text = this.enabled ? this.reflowLog.length.toString() : "";
+    browser.browserAction.setBadgeText({ text });
+  },
+}
+
+OhNoReflow.init();
