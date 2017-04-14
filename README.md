@@ -7,6 +7,5 @@ Visit the [docs/](https://mikeconley.github.io/ohnoreflow/) page for installatio
 
 # TODO
 
-There's lots to do:
-* I want a way of easily filing bugs from the list of reflows that I display
+There's still more to do:
 * I want a way of saving and loading reports
