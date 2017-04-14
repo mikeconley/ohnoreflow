@@ -49,8 +49,13 @@ const OhNoReflow = {
   },
 
   reflow(reflowData) {
-    this.reflowLog.push(reflowData);
-    this.updateBadge();
+    // Let's hardcode a threshold for now. Probably will make this
+    // configurable at some point.
+    let totalTime = (reflowData.stop - reflowData.start).toPrecision(2);
+    if (totalTime > 1.0) {
+      this.reflowLog.push(reflowData);
+      this.updateBadge();
+    }
   },
 
   reset() {
