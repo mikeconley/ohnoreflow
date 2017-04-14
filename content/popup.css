@@ -32,8 +32,11 @@ label[for="toggle"] {
   display: none;
 }
 
+#controls {
+  margin-bottom: 15px;
+}
+
 button {
-  margin-top: 15px;
   padding: 5px;
   width: 100%;
 }

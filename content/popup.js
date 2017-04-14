@@ -14,11 +14,20 @@ const Panel = {
     return this.$controls = document.getElementById("controls");
   },
 
+  get $threshold() {
+    delete this.$threshold;
+    return this.$threshold = document.getElementById("threshold");
+  },
+
+  _threshold: 1.0,
+
   init() {
     this.$dumpReport.addEventListener("click", this);
     this.$toggle.addEventListener("click", this);
-    browser.runtime.sendMessage({ name: "is-enabled" }).then(enabled => {
+    this.$threshold.addEventListener("change", this);
+    browser.runtime.sendMessage({ name: "is-enabled" }).then(({ enabled, threshold }) => {
       this.$controls.setAttribute("enabled", enabled);
+      this._threshold = this.$threshold.value = threshold;
       this.$toggle.checked = enabled;
     });
   },
@@ -34,11 +43,27 @@ const Panel = {
       }
 
       case "toggle": {
+        this.readThreshold();
         let enabled = event.originalTarget.checked;
         browser.runtime.sendMessage({ name: "toggle", enabled });
         this.$controls.setAttribute("enabled", enabled);
         break;
       }
+
+      case "threshold": {
+        this.readThreshold();
+        break;
+      }
+    }
+  },
+
+  readThreshold() {
+    let threshold = parseFloat(this.$threshold.value, 10);
+    if (!isNaN(threshold)) {
+      browser.runtime.sendMessage({ name: "threshold", threshold });
+    } else {
+      // Reset the input to the original value
+      this.$threshold.value = this._threshold;
     }
   }
 }
