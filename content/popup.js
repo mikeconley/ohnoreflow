@@ -19,16 +19,23 @@ const Panel = {
     return this.$threshold = document.getElementById("threshold");
   },
 
+  get $sound() {
+    delete this.$sound;
+    return this.$sound = document.getElementById("sound");
+  },
+
   _threshold: 1.0,
 
   init() {
     this.$dumpReport.addEventListener("click", this);
     this.$toggle.addEventListener("click", this);
     this.$threshold.addEventListener("change", this);
-    browser.runtime.sendMessage({ name: "is-enabled" }).then(({ enabled, threshold }) => {
+    this.$sound.addEventListener("change", this);
+    browser.runtime.sendMessage({ name: "get-state" }).then(({ enabled, threshold, sound }) => {
       this.$controls.setAttribute("enabled", enabled);
       this._threshold = this.$threshold.value = threshold;
       this.$toggle.checked = enabled;
+      this.$sound.checked = sound;
     });
   },
 
@@ -53,6 +60,11 @@ const Panel = {
       case "threshold": {
         this.readThreshold();
         break;
+      }
+
+      case "sound": {
+        let enabled = event.originalTarget.checked;
+        browser.runtime.sendMessage({ name: "sound", enabled });
       }
     }
   },

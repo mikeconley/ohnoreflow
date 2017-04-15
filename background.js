@@ -36,10 +36,13 @@ const OhNoReflow = {
     return this._threshold;
   },
 
+  sound: false,
+
   saveState() {
     let state = {
       enabled: this.enabled,
       threshold: this.threshold,
+      sound: this.sound,
     };
 
     browser.storage.local.set({ state });
@@ -51,6 +54,8 @@ const OhNoReflow = {
     if (state.enabled) {
       this.toggle(true);
     }
+
+    this.sound = !!state.sound;
   },
 
   messageListener(msg, sender, sendReply) {
@@ -63,8 +68,8 @@ const OhNoReflow = {
         this.reset();
         break;
       }
-      case "is-enabled": {
-        sendReply({ enabled: this.enabled, threshold: this.threshold });
+      case "get-state": {
+        sendReply({ enabled: this.enabled, threshold: this.threshold, sound: this.sound });
         break;
       }
       case "toggle": {
@@ -73,6 +78,11 @@ const OhNoReflow = {
       }
       case "threshold": {
         this.threshold = msg.threshold;
+        break;
+      }
+      case "sound": {
+        this.sound = msg.enabled;
+        break;
       }
     }
   },
@@ -83,6 +93,9 @@ const OhNoReflow = {
     let totalTime = (reflowData.stop - reflowData.start).toPrecision(2);
     if (totalTime >= this.threshold) {
       this.reflowLog.push(reflowData);
+      if (this.sound) {
+        this.playSound();
+      }
       this.updateBadge();
     }
   },
@@ -100,6 +113,19 @@ const OhNoReflow = {
       browser.browserAction.setIcon({ path });
       this.updateBadge();
     }
+  },
+
+  _playTimer: null,
+  _soundObj: new Audio("/sounds/beep.mp3"),
+  playSound() {
+    if (this._playTimer) {
+      clearTimeout(this._playTimer);
+    }
+    this._playTimer = setTimeout(() => {
+      console.log("PLAYING SOUND");
+      this._soundObj.play();
+      this._playTimer = null;
+    }, 500);
   },
 
   updateBadge() {
