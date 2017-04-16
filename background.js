@@ -88,9 +88,7 @@ const OhNoReflow = {
   },
 
   reflow(reflowData) {
-    // Let's hardcode a threshold for now. Probably will make this
-    // configurable at some point.
-    let totalTime = (reflowData.stop - reflowData.start).toPrecision(2);
+    let totalTime = (reflowData.stop - reflowData.start).toFixed(2);
     if (totalTime >= this.threshold) {
       this.reflowLog.push(reflowData);
       if (this.sound) {
