@@ -114,13 +114,12 @@ const OhNoReflow = {
   },
 
   _playTimer: null,
-  _soundObj: new Audio("/sounds/beep.mp3"),
+  _soundObj: new Audio("/sounds/sonar-sweep.mp3"),
   playSound() {
     if (this._playTimer) {
       clearTimeout(this._playTimer);
     }
     this._playTimer = setTimeout(() => {
-      console.log("PLAYING SOUND");
       this._soundObj.play();
       this._playTimer = null;
     }, 500);
