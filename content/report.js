@@ -12,6 +12,21 @@ const ReflowReport = {
     return this.$reset = document.getElementById("reset");
   },
 
+  get $save() {
+    delete this.$save;
+    return this.$save = document.getElementById("save");
+  },
+
+  get $load() {
+    delete this.$load;
+    return this.$load = document.getElementById("load");
+  },
+
+  get $loadInput() {
+    delete this.$loadInput;
+    return this.$loadInput = document.getElementById("load-input");
+  },
+
   get $status() {
     delete this.$status;
     return this.$status = document.getElementById("status");
@@ -19,6 +34,9 @@ const ReflowReport = {
 
   init() {
     this.$reset.addEventListener("click", this);
+    this.$save.addEventListener("click", this);
+    this.$load.addEventListener("click", this);
+    this.$loadInput.addEventListener("change", this);
 
     browser.runtime.sendMessage({ name: "get-reflows" }).then(reflows => {
       if (!reflows || reflows.length == 0) {
@@ -93,6 +111,35 @@ const ReflowReport = {
     }
   },
 
+  save() {
+    let blob = new Blob([JSON.stringify(this.reflows)], {type: "application/json;charset=utf-8;"});
+    let blobURL = window.URL.createObjectURL(blob);
+    browser.downloads.download({
+      url: blobURL,
+      filename: "reflow-report.json",
+      saveAs: true,
+    });
+  },
+
+  load() {
+    this.$loadInput.click();
+  },
+
+  doLoad(event) {
+    let files = event.target.files;
+    let file = files[0];
+    let reader = new FileReader();
+
+    reader.onload = fileContents => {
+      let reflows = JSON.parse(fileContents.target.result);
+      this.reflows = reflows;
+      this.injectReport(this.reflows);
+      this.$status.textContent = "Loaded report from file.";
+    };
+
+    reader.readAsText(file);
+  },
+
   fileABugURI(reflow) {
     let time = encodeURIComponent((reflow.stop - reflow.start).toFixed(2) + "ms ");
     let topFrame = encodeURIComponent(reflow.stack.split("\n")[0]);
@@ -102,8 +149,22 @@ const ReflowReport = {
   },
 
   handleEvent(event) {
-    if (event.originalTarget.id == "reset") {
-      this.reset();
+    switch (event.originalTarget.id) {
+      case "reset": {
+        this.reset();
+        break;
+      }
+      case "save": {
+        this.save();
+        break;
+      }
+      case "load": {
+        this.load();
+        break;
+      }
+      case "load-input": {
+        this.doLoad(event);
+      }
     }
   }
 };

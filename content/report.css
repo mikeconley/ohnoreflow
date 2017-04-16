@@ -27,9 +27,13 @@ td, th {
   padding: 5px;
 }
 
-#reset {
+#buttons {
   margin-bottom: 15px;
   float: right;
+}
+
+#reset {
+  margin-left: 15px;
 }
 
 #native-reflow:target {

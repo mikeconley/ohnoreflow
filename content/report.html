@@ -6,7 +6,10 @@
   <title>Oh no! Reflow! Report!</title>
 </head>
 <body>
-  <button id="reset">Reset</button>
+  <div id="buttons">
+    <button id="save">Save report</button><button id="load">Load report</button><button id="reset">Reset</button>
+    <input type="file" id="load-input" accept="application/json" style="display:none">
+  </div>
 
   <div id="status">Fetching reports...</div>
 
