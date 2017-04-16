@@ -26,14 +26,14 @@ const ReflowReport = {
       } else {
         this.reflows = reflows;
         this.injectReport(reflows);
-        this.$status.hidden = true;
+        this.$status.textContent = "Sorted from most recent to least.";
       }
     });
   },
 
   injectReport(reflows) {
     let frag = document.createDocumentFragment();
-    for (let i = 0; i < reflows.length; ++i) {
+    for (let i = reflows.length - 1; i >= 0; --i) {
       let reflow = reflows[i];
       let row = document.createElement("tr");
 

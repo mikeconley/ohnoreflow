@@ -22,6 +22,11 @@ td.disabled {
   color: #AAAAAA;
 }
 
+td, th {
+  border-right: 1px solid #DDDDDD;
+  padding: 5px;
+}
+
 #reset {
   margin-bottom: 15px;
   float: right;
