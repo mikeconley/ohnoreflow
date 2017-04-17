@@ -7,4 +7,5 @@ Visit the [docs/](https://mikeconley.github.io/ohnoreflow/) page for installatio
 
 # TODO
 * I want to be able to map a certain stack to pre-existing bug numbers to avoid too many dupe bugs being filed.
-
+* Add ability to coalesce similar stacks
+* Hide rows if the number of reflowed frames was actually 0 (depends on Reflow API modification)
