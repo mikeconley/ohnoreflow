@@ -43,3 +43,12 @@ td, th {
 td > a {
   display: block;
 }
+
+#table-controls {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+tbody.hide-rows-with-bugs > tr[has-bug="true"] {
+  display: none;
+}

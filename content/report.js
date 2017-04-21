@@ -32,11 +32,17 @@ const ReflowReport = {
     return this.$status = document.getElementById("status");
   },
 
+  get $hideRowsWithBugs() {
+    delete this.$hideRowsWithBugs;
+    return this.$hideRowsWithBugs = document.getElementById("hide-rows-with-bugs");
+  },
+
   init() {
     this.$reset.addEventListener("click", this);
     this.$save.addEventListener("click", this);
     this.$load.addEventListener("click", this);
     this.$loadInput.addEventListener("change", this);
+    this.$hideRowsWithBugs.addEventListener("click", this);
 
     browser.runtime.sendMessage({ name: "get-signature-data" }).then(sigData => {
       browser.runtime.sendMessage({ name: "get-reflows" }).then(reflows => {
@@ -118,9 +124,12 @@ const ReflowReport = {
             partialAnchor.textContent = `Bug ${bugNum} (partial match)\n`;
             fileABug.appendChild(partialAnchor);
           }
+
+          row.setAttribute("has-bug", true);
         }
 
         fileABug.appendChild(fileABugAnchor);
+
       } else {
         let anchor = document.createElement("a");
         anchor.href = "#note-on-native-reflow";
@@ -237,6 +246,12 @@ const ReflowReport = {
       }
       case "load-input": {
         this.doLoad(event);
+        break;
+      }
+      case "hide-rows-with-bugs": {
+        this.$tableBody.classList.toggle("hide-rows-with-bugs",
+                                         event.originalTarget.checked);
+        break;
       }
     }
   }
