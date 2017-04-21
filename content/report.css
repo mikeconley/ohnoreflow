@@ -39,3 +39,7 @@ td, th {
 #native-reflow:target {
   color: #FF0000;
 }
+
+td > a {
+  display: block;
+}

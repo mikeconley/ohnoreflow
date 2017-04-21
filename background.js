@@ -48,7 +48,7 @@ const OhNoReflow = {
     browser.storage.local.set({ state });
   },
 
-  init(state) {
+  init(state, signatureStuff) {
     browser.runtime.onMessage.addListener(this.messageListener.bind(this));
     this.threshold = parseFloat(state.threshold, 10);
     if (state.enabled) {
@@ -56,12 +56,18 @@ const OhNoReflow = {
     }
 
     this.sound = !!state.sound;
+    this.sigData = [];
+    this.loadSigData(signatureStuff);
   },
 
   messageListener(msg, sender, sendReply) {
     switch(msg.name) {
       case "get-reflows": {
         sendReply(this.reflowLog);
+        break;
+      }
+      case "get-signature-data": {
+        sendReply(this.sigData);
         break;
       }
       case "reset": {
@@ -129,8 +135,22 @@ const OhNoReflow = {
     let text = this.enabled ? this.reflowLog.length.toString() : "";
     browser.browserAction.setBadgeText({ text });
   },
+
+  loadSigData(signatureStuff) {
+    this.sigData = [];
+
+    for (let sigEntry of signatureStuff.data) {
+      let bugs = sigEntry.bugs;
+      let signatures = sigEntry.signatures;
+      this.sigData.push({ bugs, signatures });
+    }
+  },
 }
 
 browser.storage.local.get("state").then(result => {
-  OhNoReflow.init(result.state);
+  window.fetch("docs/signatures.json").then((response) => {
+    response.json().then((sigs) => {
+      OhNoReflow.init(result.state, sigs);
+    });
+  });
 });

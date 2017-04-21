@@ -38,18 +38,22 @@ const ReflowReport = {
     this.$load.addEventListener("click", this);
     this.$loadInput.addEventListener("change", this);
 
-    browser.runtime.sendMessage({ name: "get-reflows" }).then(reflows => {
-      if (!reflows || reflows.length == 0) {
-        this.$status.textContent = "No reflows detected. Hooray!";
-      } else {
-        this.reflows = reflows;
-        this.injectReport(reflows);
-        this.$status.textContent = "Sorted from most recent to least.";
-      }
+    browser.runtime.sendMessage({ name: "get-signature-data" }).then(sigData => {
+      browser.runtime.sendMessage({ name: "get-reflows" }).then(reflows => {
+        if (!reflows || reflows.length == 0) {
+          this.$status.textContent = "No reflows detected. Hooray!";
+        } else {
+          this.reflows = reflows;
+          this.injectReport(reflows, sigData);
+          this.$status.textContent = "Sorted from most recent to least.";
+        }
+      });
     });
   },
 
-  injectReport(reflows) {
+  injectReport(reflows, sigData) {
+    this.$tableBody.innerHTML = "";
+
     let frag = document.createDocumentFragment();
     for (let i = reflows.length - 1; i >= 0; --i) {
       let reflow = reflows[i];
@@ -81,11 +85,41 @@ const ReflowReport = {
         stackPre.textContent = reflow.stack;
         stack.appendChild(stackPre);
 
+        let signatureToResolve = reflow.stack.split("\n").map(line => {
+          return line.replace(/:\d+:\d+$/, "");
+        });
+
         let uri = this.fileABugURI(reflow);
         let fileABugAnchor = document.createElement("a");
         fileABugAnchor.href = uri;
-        fileABugAnchor.textContent = "File a bug";
         fileABugAnchor.target = "_blank";
+        fileABugAnchor.textContent = "File a bug";
+
+        let bugs = this.resolveSignatureToBugs(sigData, signatureToResolve);
+
+        if (bugs.exact.length || bugs.partial.length) {
+          // There are pre-existing bugs! Let's tell the user so that
+          // they don't file more bugs than they need to.
+          fileABugAnchor.textContent = "File a new bug anyway";
+          console.log( bugs);
+
+          for (let bugNum of bugs.exact) {
+            let exactAnchor = document.createElement("a");
+            exactAnchor.href = `https://bugzilla.mozilla.org/show_bug.cgi?id=${bugNum}`;
+            exactAnchor.target = "_blank";
+            exactAnchor.textContent = `Bug ${bugNum}\n`;
+            fileABug.appendChild(exactAnchor);
+          }
+
+          for (let bugNum of bugs.partial) {
+            let partialAnchor = document.createElement("a");
+            partialAnchor.href = `https://bugzilla.mozilla.org/show_bug.cgi?id=${bugNum}`;
+            partialAnchor.target = "_blank";
+            partialAnchor.textContent = `Bug ${bugNum} (partial match)\n`;
+            fileABug.appendChild(partialAnchor);
+          }
+        }
+
         fileABug.appendChild(fileABugAnchor);
       } else {
         let anchor = document.createElement("a");
@@ -103,6 +137,43 @@ const ReflowReport = {
     }
 
     this.$tableBody.appendChild(frag);
+  },
+
+  resolveSignatureToBugs(sigData, signatureToResolve) {
+    let exact = new Set();
+    let partial = new Set();
+
+    for (let sigEntry of sigData) {
+      let signatures = sigEntry.signatures;
+      let bugs = sigEntry.bugs;
+
+      for (let signature of signatures) {
+        let matchLines = 0;
+        let matchMin = Math.min(signatures.length, signatureToResolve.length);
+        for (let i = 0; i < matchMin; ++i) {
+          if (signature[i] == signatureToResolve[i]) {
+            matchLines++;
+          } else {
+            break;
+          }
+        }
+
+        if (matchLines > 0) {
+          if (matchLines == matchMin) {
+            for (let bug of bugs) {
+              exact.add(bug);
+            }
+            break;
+          } else {
+            for (let bug of bugs) {
+              partial.add(bug);
+            }
+          }
+        }
+      }
+    }
+
+    return { exact: Array.from(exact), partial: Array.from(partial) };
   },
 
   reset() {
@@ -133,8 +204,10 @@ const ReflowReport = {
     reader.onload = fileContents => {
       let reflows = JSON.parse(fileContents.target.result);
       this.reflows = reflows;
-      this.injectReport(this.reflows);
-      this.$status.textContent = "Loaded report from file.";
+      browser.runtime.sendMessage({ name: "get-signature-data" }).then(sigData => {
+        this.injectReport(this.reflows, sigData);
+        this.$status.textContent = "Loaded report from file.";
+      });
     };
 
     reader.readAsText(file);
