@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Oh no! Reflow! Signature Generator</title>
+</head>
+
+<body>
+<p>This little tool can take a stack from Oh no! Reflow!, and turn it into the right format to be added to the signatures.json list.</p>
+
+<textarea id="stack" placeholder="Paste the stack here" rows="30" cols="100"></textarea>
+
+<pre id="output">
+</pre>
+</body>
+
+<script>
+addEventListener("load", function() {
+  var $stack = document.getElementById("stack");
+  $stack.addEventListener("change", function() {
+    var rawStack = $stack.value.trim();
+
+    // Split the stack up by the newlines, and for each line, strip off the
+    // line number / column number.
+    var splitStack = rawStack.split('\n');
+    var refinedSplitStack = splitStack.map((line) => {
+      return "\"" + line.replace(/:\d+:\d+$/, "") + "\"";
+    });
+
+    var outputText = refinedSplitStack.join(',\n');
+
+    var $output = document.getElementById("output");
+    $output.textContent = outputText;
+  });
+});
+</script>
+
+</html>
