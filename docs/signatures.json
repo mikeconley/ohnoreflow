@@ -750,6 +750,33 @@
         ]
       ],
       "bugs": [1358458]
+    },
+
+    {
+      "signatures": [
+        [
+          "_handleOverflow@chrome://global/content/bindings/autocomplete.xml",
+          "handleOverUnderflow@chrome://global/content/bindings/autocomplete.xml",
+          "_onChanged@chrome://global/content/bindings/autocomplete.xml",
+          "_appendCurrentResult/<@chrome://global/content/bindings/autocomplete.xml",
+          "setTimeout handler*_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
+          "_invalidate@chrome://global/content/bindings/autocomplete.xml",
+          "invalidate@chrome://global/content/bindings/autocomplete.xml",
+          "showPopupWithResults@resource://gre/modules/AutoCompletePopup.jsm",
+          "receiveMessage@resource://gre/modules/AutoCompletePopup.jsm"
+        ],
+
+        [
+          "_handleOverflow@chrome://global/content/bindings/autocomplete.xml",
+          "handleOverUnderflow@chrome://global/content/bindings/autocomplete.xml",
+          "_reuseAcItem@chrome://global/content/bindings/autocomplete.xml",
+          "_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
+          "_invalidate@chrome://global/content/bindings/autocomplete.xml",
+          "invalidate@chrome://global/content/bindings/autocomplete.xml"
+        ]
+      ],
+
+      "bugs": [1356532]
     }
   ]
 }
