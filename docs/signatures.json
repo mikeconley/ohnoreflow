@@ -802,6 +802,309 @@
       ],
 
       "bugs": [1358695]
+    },
+
+    {
+      "signatures": [
+        [
+          "_shiftMainView@chrome://browser/content/customizableui/panelUI.xml",
+          "showSubView/<@chrome://browser/content/customizableui/panelUI.xml",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "TaskImpl@resource://gre/modules/Task.jsm",
+          "asyncFunction@resource://gre/modules/Task.jsm",
+          "Task_spawn@resource://gre/modules/Task.jsm",
+          "showSubView@chrome://browser/content/customizableui/panelUI.xml",
+          "showHelpView@chrome://browser/content/customizableui/panelUI.js",
+          "oncommand@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358703]
+    },
+
+    {
+      "signatures": [
+        [
+          "_calcMouseTargetRect@chrome://browser/content/tabbrowser.xml",
+          "getMouseTargetRect@chrome://browser/content/tabbrowser.xml",
+          "_callListener@chrome://browser/content/browser.js",
+          "addListener@chrome://browser/content/browser.js",
+          "set_label@chrome://browser/content/tabbrowser.xml",
+          "updateStatusField@chrome://browser/content/browser.js",
+          "_showDelayed/this._timer<@chrome://browser/content/browser.js",
+          "setTimeout handler*_showDelayed@chrome://browser/content/browser.js",
+          "handleEvent@chrome://browser/content/browser.js",
+          "EventListener.handleEvent*update@chrome://browser/content/browser.js",
+          "setOverLink@chrome://browser/content/browser.js"
+        ]
+      ],
+
+      "bugs": [1358712]
+    },
+
+    {
+      "signatures": [
+        [
+          "Grid_resizeGrid@chrome://browser/content/newtab/newTab.js",
+          "Grid_handleEvent@chrome://browser/content/newtab/newTab.js",
+          "EventListener.handleEvent*Grid_init/<@chrome://browser/content/newtab/newTab.js",
+          "executeCallbacks@resource://gre/modules/NewTabUtils.jsm",
+          "Links_populateCache/<@resource://gre/modules/NewTabUtils.jsm",
+          "_populateProviderCache/cache.populatePromise</</<@resource://gre/modules/NewTabUtils.jsm",
+          "DirectoryLinksProvider_getLinks/<@resource:///modules/DirectoryLinksProvider.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "onSuccess@resource://gre/modules/osfile/osfile_native.jsm"
+        ]
+      ],
+
+      "bugs": [1358716]
+    },
+
+    {
+      "signatures": [
+        [
+          "PT__updateChevronTimerCallback@chrome://browser/content/places/browserPlacesViews.js",
+          "PT_notify@chrome://browser/content/places/browserPlacesViews.js"
+        ]
+      ],
+
+      "bugs": [1358719]
+    },
+
+    {
+      "signatures": [
+        [
+          "adjustTabstrip@chrome://browser/content/tabbrowser.xml",
+          "_handleNewTab@chrome://browser/content/tabbrowser.xml",
+          "addTab/<@chrome://browser/content/tabbrowser.xml",
+          "setTimeout handler*addTab@chrome://browser/content/tabbrowser.xml",
+          "loadOneTab@chrome://browser/content/tabbrowser.xml",
+          "enter@resource:///modules/CustomizeMode.jsm",
+          "toggle@resource:///modules/CustomizeMode.jsm",
+          "oncommand@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358721]
+    },
+
+    {
+      "signatures": [
+        [
+          "updateLWTStyling@resource:///modules/CustomizeMode.jsm",
+          "observe@resource:///modules/CustomizeMode.jsm",
+          "_update@resource://gre/modules/LightweightThemeConsumer.jsm",
+          "observe@resource://gre/modules/LightweightThemeConsumer.jsm",
+          "_notifyWindows@resource://gre/modules/LightweightThemeManager.jsm",
+          "previewTheme@resource://gre/modules/LightweightThemeManager.jsm",
+          "previewTheme@resource:///modules/CustomizeMode.jsm",
+          "EventListener.handleEvent*buildToolbarButton@resource:///modules/CustomizeMode.jsm",
+          "onLWThemesMenuShowing/<@resource:///modules/CustomizeMode.jsm",
+          "safeCall@resource://gre/modules/AddonManager.jsm",
+          "makeSafe/<@resource://gre/modules/AddonManager.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise.prototype.then@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "getAddon@resource://gre/modules/addons/XPIProvider.jsm -> resource://gre/modules/addons/XPIProviderUtils.js",
+          "getVisibleAddonForID@resource://gre/modules/addons/XPIProvider.jsm -> resource://gre/modules/addons/XPIProviderUtils.js",
+          "getAddonByID@resource://gre/modules/addons/XPIProvider.jsm",
+          "callProviderAsync@resource://gre/modules/AddonManager.jsm",
+          "promiseCallProvider/<@resource://gre/modules/AddonManager.jsm",
+          "Promise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "promiseCallProvider@resource://gre/modules/AddonManager.jsm",
+          "getAddonByID/promises<@resource://gre/modules/AddonManager.jsm",
+          "getAddonByID@resource://gre/modules/AddonManager.jsm",
+          "getAddonByID@resource://gre/modules/AddonManager.jsm",
+          "onLWThemesMenuShowing@resource:///modules/CustomizeMode.jsm",
+          "onpopupshowing@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358722]
+    },
+
+    {
+      "signatures": [
+        [
+          "updateOverflowStatus@chrome://browser/content/places/browserPlacesViews.js",
+          "PTH_init@chrome://browser/content/browser-places.js",
+          "PTH_customizeDone@chrome://browser/content/browser-places.js",
+          "_customizationEnding@chrome://browser/content/browser-customization.js",
+          "handleEvent@chrome://browser/content/browser-customization.js",
+          "_dispatchToolboxEventToWindow@resource:///modules/CustomizableUI.jsm",
+          "dispatchToolboxEvent@resource:///modules/CustomizableUI.jsm",
+          "dispatchToolboxEvent@resource:///modules/CustomizableUI.jsm",
+          "exit/<@resource:///modules/CustomizeMode.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "deferredUnwrapToolbarItem/</<@resource:///modules/CustomizeMode.jsm"
+        ]
+      ],
+
+      "bugs": [1358724]
+    },
+
+    {
+      "signatures": [
+        [
+          "updateCurrentBrowser@chrome://browser/content/tabbrowser.xml",
+          "onselect@chrome://browser/content/browser.xul",
+          "set_selectedIndex@chrome://browser/content/tabbrowser.xml",
+          "set_selectedPanel@chrome://global/content/bindings/tabbox.xml",
+          "set_selectedIndex@chrome://global/content/bindings/tabbox.xml",
+          "set_selectedItem@chrome://global/content/bindings/tabbox.xml",
+          "_selectNewTab@chrome://global/content/bindings/tabbox.xml",
+          "onxblmousedown@chrome://global/content/bindings/tabbox.xml"
+        ]
+      ],
+
+      "bugs": [1358727]
+    },
+
+    {
+      "signatures": [
+        [
+          "startFind@chrome://global/content/bindings/findbar.xml",
+          "onFindCommand@chrome://global/content/bindings/findbar.xml",
+          "oncommand@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358728]
+    },
+
+    {
+      "signatures": [
+        [
+          "onResize@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "forEachCodeMirror@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "registerGlobalHandlers/</resizeTimer<@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "setTimeout handler*registerGlobalHandlers/<@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "EventListener.handleEvent*CodeMirror</</CodeMirror.on@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "registerGlobalHandlers@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "ensureGlobalHandlers@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "CodeMirror@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "CodeMirror@chrome://devtools/content/sourceeditor/codemirror/codemirror.bundle.js",
+          "_setup@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/sourceeditor/editor.js",
+          "onLoad@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/sourceeditor/editor.js",
+          "EventListener.handleEvent*appendTo@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/sourceeditor/editor.js",
+          "load@resource://devtools/client/styleeditor/StyleSheetEditor.jsm",
+          "_sourceLoaded/<.onShow</<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "spawn@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "_sourceLoaded/<.onShow<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "set activeSummary@resource://devtools/client/shared/SplitView.jsm",
+          "_selectEditor/summaryPromise<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "onPacket/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js",
+          "DevTools RDP*request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js",
+          "generateRequestMethods/</frontProto[name]@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js",
+          "_getSourceTextAndPrettify@resource://devtools/client/styleeditor/StyleSheetEditor.jsm",
+          "fetchSource@resource://devtools/client/styleeditor/StyleSheetEditor.jsm",
+          "StyleEditorUI.prototype._addStyleSheetEditor<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "StyleEditorUI.prototype._addStyleSheet<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "StyleEditorUI.prototype._resetStyleSheetList<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "StyleEditorUI.prototype.initialize<@resource://devtools/client/styleeditor/StyleEditorUI.jsm",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "onPacket/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js",
+          "DevTools RDP*request@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/protocol.js"
+        ]
+      ],
+
+      "bugs": [1358729]
+    },
+
+    {
+      "signatures": [
+        [
+          "stop@chrome://global/content/bindings/browser.xml",
+          "setTab@resource:///modules/CustomizeMode.jsm",
+          "enter@resource:///modules/CustomizeMode.jsm",
+          "toggle@resource:///modules/CustomizeMode.jsm",
+          "oncommand@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358730]
+    },
+
+    {
+      "signatures": [
+        [
+          "removePrompt@chrome://browser/content/browser.js"
+        ]
+      ],
+
+      "bugs": [1358731]
+    },
+
+    {
+      "signatures": [
+        [
+          "_customizationEnding@chrome://browser/content/browser-customization.js",
+          "handleEvent@chrome://browser/content/browser-customization.js",
+          "_dispatchToolboxEventToWindow@resource:///modules/CustomizableUI.jsm",
+          "dispatchToolboxEvent@resource:///modules/CustomizableUI.jsm",
+          "dispatchToolboxEvent@resource:///modules/CustomizableUI.jsm",
+          "exit/<@resource:///modules/CustomizeMode.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "deferredUnwrapToolbarItem/</<@resource:///modules/CustomizeMode.jsm"
+        ]
+      ],
+
+      "bugs": [1358733]
+    },
+
+    {
+      "signatures": [
+        [
+          "showNavToolbox@chrome://browser/content/browser-fullScreenAndPointerLock.js",
+          "_expandCallback@chrome://browser/content/browser-fullScreenAndPointerLock.js",
+          "EventListener.handleEvent*toggle@chrome://browser/content/browser-fullScreenAndPointerLock.js",
+          "handleEvent@chrome://browser/content/browser-fullScreenAndPointerLock.js",
+          "EventListener.handleEvent*init@chrome://browser/content/browser-fullScreenAndPointerLock.js",
+          "_delayedStartup@chrome://browser/content/browser.js",
+          "EventListener.handleEvent*onLoad@chrome://browser/content/browser.js",
+          "onload@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358734]
     }
   ]
 }
