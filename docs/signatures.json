@@ -790,6 +790,18 @@
       ],
 
       "bugs": [1358687]
+    },
+
+    {
+      "signatures": [
+        [
+          "focusContent@resource://gre/modules/RemoteFinder.jsm",
+          "close@chrome://global/content/bindings/findbar.xml",
+          "onxblkeypress@chrome://global/content/bindings/findbar.xml"
+        ]
+      ],
+
+      "bugs": [1358695]
     }
   ]
 }
