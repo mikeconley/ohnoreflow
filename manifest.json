@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Oh no! Reflow!",
-  "version": "0.10",
+  "version": "0.11",
   "description": "A tool for detecting and recording reflow in the browser front-end code.",
   "background": {
     "scripts": ["background.js"]
