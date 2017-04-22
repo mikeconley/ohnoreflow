@@ -777,6 +777,19 @@
       ],
 
       "bugs": [1356532]
+    },
+
+    {
+      "signatures": [
+        [
+          "_adjustFocusAfterTabSwitch@chrome://browser/content/tabbrowser.xml",
+          "updateDisplay@chrome://browser/content/tabbrowser.xml",
+          "postActions@chrome://browser/content/tabbrowser.xml",
+          "handleEvent@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+
+      "bugs": [1358687]
     }
   ]
 }
