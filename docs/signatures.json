@@ -1105,6 +1105,244 @@
       ],
 
       "bugs": [1358734]
+    },
+
+    {
+      "signatures": [
+        [
+          "adjustSiteIconStart@chrome://global/content/bindings/autocomplete.xml",
+          "_onChanged@chrome://global/content/bindings/autocomplete.xml",
+          "_appendCurrentResult/<@chrome://global/content/bindings/autocomplete.xml",
+          "setTimeout handler*_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
+          "_appendCurrentResult/this._appendResultTimeout<@chrome://global/content/bindings/autocomplete.xml",
+          "setTimeout handler*_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
+          "_appendCurrentResult/this._appendResultTimeout<@chrome://global/content/bindings/autocomplete.xml",
+          "setTimeout handler*_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
+          "_invalidate@chrome://global/content/bindings/autocomplete.xml",
+          "invalidate@chrome://global/content/bindings/autocomplete.xml"
+        ]
+      ],
+
+      "bugs": [1358792]
+    },
+
+    {
+      "signatures": [
+        [
+          "ssi_getWindowDimension@resource:///modules/sessionstore/SessionStore.jsm",
+          "ssi_updateWindowFeatures/<@resource:///modules/sessionstore/SessionStore.jsm",
+          "ssi_updateWindowFeatures@resource:///modules/sessionstore/SessionStore.jsm",
+          "ssi_collectWindowData@resource:///modules/sessionstore/SessionStore.jsm",
+          "getCurrentState/<@resource:///modules/sessionstore/SessionStore.jsm",
+          "ssi_forEachBrowserWindow@resource:///modules/sessionstore/SessionStore.jsm",
+          "getCurrentState@resource:///modules/sessionstore/SessionStore.jsm",
+          "getCurrentState@resource:///modules/sessionstore/SessionStore.jsm",
+          "_saveState@resource:///modules/sessionstore/SessionSaver.jsm",
+          "_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm",
+          "runDelayed/this._timeoutID<@resource:///modules/sessionstore/SessionSaver.jsm",
+          "setTimeout_timer@resource://gre/modules/Timer.jsm"
+        ]
+      ],
+
+      "bugs": [1358809]
+    },
+
+    {
+      "signatures": [
+        [
+          "create@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox-hosts.js",
+          "ToolboxHostManager.prototype.create<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/toolbox-host-manager.js",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "DevTools.prototype.createToolbox<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/devtools.js",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "DevTools.prototype.showToolbox<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/devtools.js",
+          "_run@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "TaskImpl@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "asyncFunction@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/task.js",
+          "selectToolCommand@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/devtools-browser.js",
+          "createToolMenuElements/oncommand<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/browser-menus.js",
+          "fillSubviewFromMenuItems/<@resource:///modules/CustomizableWidgets.jsm",
+          "EventListener.handleEvent*fillSubviewFromMenuItems@resource:///modules/CustomizableWidgets.jsm",
+          "onViewShowing@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/client/framework/devtools-browser.js",
+          "wrapWidgetEventHandler/aWidget[aEventName]@resource:///modules/CustomizableUI.jsm",
+          "showSubView/<@chrome://browser/content/customizableui/panelUI.xml",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "TaskImpl@resource://gre/modules/Task.jsm",
+          "asyncFunction@resource://gre/modules/Task.jsm",
+          "Task_spawn@resource://gre/modules/Task.jsm",
+          "showSubView@chrome://browser/content/customizableui/panelUI.xml",
+          "PanelUI.showSubView<@chrome://browser/content/customizableui/panelUI.js",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "TaskImpl@resource://gre/modules/Task.jsm",
+          "asyncFunction@resource://gre/modules/Task.jsm",
+          "handleWidgetCommand@resource:///modules/CustomizableUI.jsm",
+          "EventListener.handleEvent*buildWidget@resource:///modules/CustomizableUI.jsm",
+          "getWidgetNode@resource:///modules/CustomizableUI.jsm",
+          "buildArea@resource:///modules/CustomizableUI.jsm",
+          "registerMenuPanel@resource:///modules/CustomizableUI.jsm",
+          "registerMenuPanel@resource:///modules/CustomizableUI.jsm",
+          "ensureReady/this._readyPromise<@chrome://browser/content/customizableui/panelUI.js",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "promise callback*TaskImpl_handleResultValue@resource://gre/modules/Task.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "TaskImpl@resource://gre/modules/Task.jsm",
+          "asyncFunction@resource://gre/modules/Task.jsm",
+          "Task_spawn@resource://gre/modules/Task.jsm",
+          "ensureReady@chrome://browser/content/customizableui/panelUI.js",
+          "show/<@chrome://browser/content/customizableui/panelUI.js",
+          "Promise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "show@chrome://browser/content/customizableui/panelUI.js",
+          "toggle@chrome://browser/content/customizableui/panelUI.js",
+          "handleEvent@chrome://browser/content/customizableui/panelUI.js",
+          "EventListener.handleEvent*init@chrome://browser/content/customizableui/panelUI.js",
+          "_delayedStartup@chrome://browser/content/browser.js",
+          "EventListener.handleEvent*onLoad@chrome://browser/content/browser.js",
+          "onload@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358810]
+    },
+
+    {
+      "signatures": [
+        [
+          "ssi_undoCloseTab@resource:///modules/sessionstore/SessionStore.jsm",
+          "ss_undoCloseTab@resource:///modules/sessionstore/SessionStore.jsm",
+          "undoCloseTab@chrome://browser/content/browser.js",
+          "oncommand@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358811]
+    },
+
+    {
+      "signatures": [
+        [
+          "select@chrome://global/content/bindings/textbox.xml",
+          "focusAndSelectUrlBar@chrome://browser/content/browser.js",
+          "openTab/</<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://testpilot-containers/index.js",
+          "promise callback*openTab/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://testpilot-containers/index.js",
+          "promise callback*openTab@resource://gre/modules/commonjs/toolkit/loader.js -> resource://testpilot-containers/index.js",
+          "init/</<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://testpilot-containers/index.js",
+          "raw@resource://gre/modules/ExtensionCommon.jsm",
+          "receiveMessage@resource://gre/modules/ExtensionChild.jsm",
+          "_callHandlers/responses<@resource://gre/modules/MessageChannel.jsm",
+          "_callHandlers@resource://gre/modules/MessageChannel.jsm",
+          "_handleMessage/deferred.promise<@resource://gre/modules/MessageChannel.jsm",
+          "_handleMessage@resource://gre/modules/MessageChannel.jsm",
+          "receiveMessage@resource://gre/modules/MessageChannel.jsm"
+        ]
+      ],
+
+      "bugs": [1358813]
+    },
+
+    {
+      "signatures": [
+        [
+          "getFindBar@chrome://browser/content/tabbrowser.xml",
+          "@chrome://browser/content/browser.js",
+          "onCommand@resource:///modules/CustomizableWidgets.jsm",
+          "handleWidgetCommand@resource:///modules/CustomizableUI.jsm",
+          "EventListener.handleEvent*buildWidget@resource:///modules/CustomizableUI.jsm",
+          "getWidgetNode@resource:///modules/CustomizableUI.jsm",
+          "buildArea@resource:///modules/CustomizableUI.jsm",
+          "registerMenuPanel@resource:///modules/CustomizableUI.jsm",
+          "registerMenuPanel@resource:///modules/CustomizableUI.jsm",
+          "ensureReady/this._readyPromise<@chrome://browser/content/customizableui/panelUI.js",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "promise callback*TaskImpl_handleResultValue@resource://gre/modules/Task.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "TaskImpl@resource://gre/modules/Task.jsm",
+          "asyncFunction@resource://gre/modules/Task.jsm",
+          "Task_spawn@resource://gre/modules/Task.jsm",
+          "ensureReady@chrome://browser/content/customizableui/panelUI.js",
+          "show/<@chrome://browser/content/customizableui/panelUI.js",
+          "Promise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "show@chrome://browser/content/customizableui/panelUI.js",
+          "toggle@chrome://browser/content/customizableui/panelUI.js",
+          "handleEvent@chrome://browser/content/customizableui/panelUI.js",
+          "EventListener.handleEvent*init@chrome://browser/content/customizableui/panelUI.js",
+          "_delayedStartup@chrome://browser/content/browser.js",
+          "EventListener.handleEvent*onLoad@chrome://browser/content/browser.js",
+          "onload@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358815]
+    },
+
+    {
+      "signatures": [
+        [
+          "_animateTabMove@chrome://browser/content/tabbrowser.xml",
+          "onxbldragover@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+
+      "bugs": [1358816]
+    },
+
+    {
+      "signatures": [
+        [
+          "updateBrowserRemoteness@chrome://browser/content/tabbrowser.xml",
+          "updateBrowserRemotenessByURL@chrome://browser/content/tabbrowser.xml",
+          "restoreTabContent@resource:///modules/sessionstore/SessionStore.jsm",
+          "restoreTab@resource:///modules/sessionstore/SessionStore.jsm",
+          "navigateAndRestore/<@resource:///modules/sessionstore/SessionStore.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "resolve@resource:///modules/sessionstore/TabStateFlusher.jsm",
+          "resolve@resource:///modules/sessionstore/TabStateFlusher.jsm",
+          "receiveMessage@resource:///modules/sessionstore/SessionStore.jsm"
+        ]
+      ],
+
+      "bugs": [1358823]
+    },
+
+    {
+      "signatures": [
+        [
+          "loadViewInternal@chrome://mozapps/content/extensions/extensions.js",
+          "updateState@chrome://mozapps/content/extensions/extensions.js",
+          "initialize/<@chrome://mozapps/content/extensions/extensions.js",
+          "goBack/<@chrome://global/content/bindings/browser.xml",
+          "_wrapURIChangeCall@chrome://global/content/bindings/browser.xml",
+          "goBack@chrome://global/content/bindings/browser.xml",
+          "goBack@chrome://browser/content/tabbrowser.xml",
+          "BrowserBack@chrome://browser/content/browser.js",
+          "HandleAppCommandEvent@chrome://browser/content/browser.js",
+          "EventListener.handleEvent*onLoad@chrome://browser/content/browser.js",
+          "onload@chrome://browser/content/browser.xul"
+        ]
+      ],
+
+      "bugs": [1358829]
+    },
+
+    {
+      "signatures": [
+        [
+          "swapDocShells@chrome://global/content/bindings/browser.xml",
+          "_swapBrowserDocShells@chrome://browser/content/tabbrowser.xml",
+          "swapBrowsersAndCloseOther@chrome://browser/content/tabbrowser.xml",
+          "adoptTab@chrome://browser/content/tabbrowser.xml",
+          "onxbldrop@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+
+      "bugs": [1358832]
     }
   ]
 }
