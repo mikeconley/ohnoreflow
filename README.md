@@ -8,3 +8,4 @@ Visit the [docs/](https://mikeconley.github.io/ohnoreflow/) page for installatio
 # TODO
 * Add ability to coalesce similar stacks
 * Hide rows if the number of reflowed frames was actually 0 (depends on Reflow API modification)
+* Add ability to update signatures without requiring an add-on update
