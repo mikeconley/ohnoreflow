@@ -1343,6 +1343,16 @@
       ],
 
       "bugs": [1358832]
+    },
+
+    {
+      "signatures": [
+        [
+          "receiveMessage@resource://gre/modules/SelectParentHelper.jsm"
+        ]
+      ],
+
+      "bugs": [1359263]
     }
   ]
 }
