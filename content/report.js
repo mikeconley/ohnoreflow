@@ -107,7 +107,6 @@ const ReflowReport = {
           // There are pre-existing bugs! Let's tell the user so that
           // they don't file more bugs than they need to.
           fileABugAnchor.textContent = "File a new bug anyway";
-          console.log( bugs);
 
           for (let bugNum of bugs.exact) {
             let exactAnchor = document.createElement("a");
