@@ -1544,7 +1544,19 @@
         ]
       ],
 
-      "bugs": []
+      "bugs": [1360217]
+    },
+
+    {
+      "signatures": [
+        [
+          "getNodeText@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/TooltipTextProvider.js",
+          "fillInPageTooltip@chrome://global/content/bindings/popup.xml",
+          "onxblpopupshowing@chrome://global/content/bindings/popup.xml"
+        ]
+      ],
+
+      "bugs": [1359990]
     }
   ]
 }
