@@ -118,19 +118,19 @@
           "_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
           "_invalidate@chrome://global/content/bindings/autocomplete.xml",
           "invalidate@chrome://global/content/bindings/autocomplete.xml",
-          "notifyResults@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_onResultRow@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "notifyResults@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_onResultRow@jar/omni.ja!/components/UnifiedComplete.js",
           "handleResult@resource://gre/modules/Sqlite.jsm"
         ],
 
         [
           "ensureElementIsVisible@chrome://global/content/bindings/richlistbox.xml",
           "set_selectedIndex@chrome://global/content/bindings/autocomplete.xml",
-          "notifyResults@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addSearchEngineMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_matchCurrentSearchEngine@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "notifyResults@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addSearchEngineMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_matchCurrentSearchEngine@jar/omni.ja!/components/UnifiedComplete.js",
           "TaskImpl_run@resource://gre/modules/Task.jsm",
           "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
@@ -150,7 +150,7 @@
           "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "Promise.prototype.then@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
-          "startSearch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "startSearch@jar/omni.ja!/components/UnifiedComplete.js",
           "onInput@chrome://browser/content/urlbarBindings.xml",
           "onxblinput@chrome://global/content/bindings/autocomplete.xml"
         ],
@@ -158,17 +158,17 @@
         [
           "ensureElementIsVisible@chrome://global/content/bindings/richlistbox.xml",
           "set_selectedIndex@chrome://global/content/bindings/autocomplete.xml",
-          "notifyResults@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addSearchEngineMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_matchCurrentSearchEngine@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "notifyResults@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addSearchEngineMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_matchCurrentSearchEngine@jar/omni.ja!/components/UnifiedComplete.js",
           "TaskImpl_run@resource://gre/modules/Task.jsm",
           "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "Promise.prototype.then@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
-          "startSearch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "startSearch@jar/omni.ja!/components/UnifiedComplete.js",
           "onInput@chrome://browser/content/urlbarBindings.xml",
           "onxblinput@chrome://global/content/bindings/autocomplete.xml"
         ],
@@ -190,10 +190,10 @@
           "_appendCurrentResult@chrome://global/content/bindings/autocomplete.xml",
           "_invalidate@chrome://global/content/bindings/autocomplete.xml",
           "invalidate@chrome://global/content/bindings/autocomplete.xml",
-          "notifyResults@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_onResultRow@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_matchKnownUrl/<@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "notifyResults@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_onResultRow@jar/omni.ja!/components/UnifiedComplete.js",
+          "_matchKnownUrl/<@jar/omni.ja!/components/UnifiedComplete.js",
           "handleResult@resource://gre/modules/Sqlite.jsm"
         ],
 
@@ -417,9 +417,9 @@
           "openAutocompletePopup@chrome://browser/content/urlbarBindings.xml",
           "openPopup@chrome://global/content/bindings/autocomplete.xml",
           "set_popupOpen@chrome://global/content/bindings/autocomplete.xml",
-          "notifyResults@jar:file:///Applications/FirefoxNightly.app/Contents/Resources/omni.ja!/components/UnifiedComplete.js",
-          "_addMatch@jar:file:///Applications/FirefoxNightly.app/Contents/Resources/omni.ja!/components/UnifiedComplete.js",
-          "_matchPlacesKeyword@jar:file:///Applications/FirefoxNightly.app/Contents/Resources/omni.ja!/components/UnifiedComplete.js",
+          "notifyResults@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_matchPlacesKeyword@jar/omni.ja!/components/UnifiedComplete.js",
           "TaskImpl_run@resource://gre/modules/Task.jsm",
           "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
@@ -434,10 +434,10 @@
           "openAutocompletePopup@chrome://browser/content/urlbarBindings.xml",
           "openPopup@chrome://global/content/bindings/autocomplete.xml",
           "set_popupOpen@chrome://global/content/bindings/autocomplete.xml",
-          "notifyResults@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_addMatch@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_onResultRow@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
-          "_matchKnownUrl/<@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/UnifiedComplete.js",
+          "notifyResults@jar/omni.ja!/components/UnifiedComplete.js",
+          "_addMatch@jar/omni.ja!/components/UnifiedComplete.js",
+          "_onResultRow@jar/omni.ja!/components/UnifiedComplete.js",
+          "_matchKnownUrl/<@jar/omni.ja!/components/UnifiedComplete.js",
           "handleResult@resource://gre/modules/Sqlite.jsm"
         ]
       ],
@@ -448,9 +448,9 @@
       "signatures": [
         [
           "appendPrompt@chrome://browser/content/browser.js",
-          "openTabPrompt@jar:file:///Applications/FirefoxNightly.app/Contents/Resources/omni.ja!/components/nsPrompter.js",
-          "openPrompt@jar:file:///Applications/FirefoxNightly.app/Contents/Resources/omni.ja!/components/nsPrompter.js",
-          "confirm@jar:file:///Applications/FirefoxNightly.app/Contents/Resources/omni.ja!/components/nsPrompter.js",
+          "openTabPrompt@jar/omni.ja!/components/nsPrompter.js",
+          "openPrompt@jar/omni.ja!/components/nsPrompter.js",
+          "confirm@jar/omni.ja!/components/nsPrompter.js",
           "reset@moz-extension://f406413e-5fc2-ff4d-94c7-889452f980de/content/report.js",
           "handleEvent@moz-extension://f406413e-5fc2-ff4d-94c7-889452f980de/content/report.js"
         ]
@@ -475,9 +475,9 @@
           "openPopup@chrome://global/content/bindings/popup.xml",
           "openPopup@chrome://browser/content/search/search.xml",
           "set_popupOpen@chrome://global/content/bindings/autocomplete.xml",
-          "onResultsReady@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/nsSearchSuggestions.js",
-          "onResultsReturned@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/nsSearchSuggestions.js",
-          "_init/this._suggestionController<@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/nsSearchSuggestions.js",
+          "onResultsReady@jar/omni.ja!/components/nsSearchSuggestions.js",
+          "onResultsReturned@jar/omni.ja!/components/nsSearchSuggestions.js",
+          "_init/this._suggestionController<@jar/omni.ja!/components/nsSearchSuggestions.js",
           "_dedupeAndReturnResults@resource://gre/modules/SearchSuggestionController.jsm",
           "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
@@ -485,9 +485,9 @@
           "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
           "onSearchResult@resource://gre/modules/SearchSuggestionController.jsm",
-          "processEntry@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/nsFormAutoComplete.js",
-          "getAutoCompleteValues/<@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/nsFormAutoComplete.js",
-          "receiveMessage@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/nsFormAutoComplete.js"
+          "processEntry@jar/omni.ja!/components/nsFormAutoComplete.js",
+          "getAutoCompleteValues/<@jar/omni.ja!/components/nsFormAutoComplete.js",
+          "receiveMessage@jar/omni.ja!/components/nsFormAutoComplete.js"
         ]
       ],
       "bugs": [1358382]
@@ -1550,13 +1550,130 @@
     {
       "signatures": [
         [
-          "getNodeText@jar:file:///C:/Program%20Files/Nightly/omni.ja!/components/TooltipTextProvider.js",
+          "getNodeText@jar/omni.ja!/components/TooltipTextProvider.js",
           "fillInPageTooltip@chrome://global/content/bindings/popup.xml",
           "onxblpopupshowing@chrome://global/content/bindings/popup.xml"
         ]
       ],
 
       "bugs": [1359990]
+    },
+
+    {
+      "signatures": [
+        [
+          "onResize@chrome://global/content/tabprompts.xml",
+          "handleEvent@chrome://global/content/tabprompts.xml"
+        ],
+
+        [
+          "onResize@chrome://global/content/tabprompts.xml",
+          "init@chrome://global/content/tabprompts.xml",
+          "appendPrompt@chrome://browser/content/browser.js"
+        ]
+      ],
+
+      "bugs": [1361115]
+    },
+
+    {
+      "signatures": [
+        [
+          "getContentSize@resource://gre/modules/PageThumbUtils.jsm",
+          "createSnapshotThumbnail@resource://gre/modules/PageThumbUtils.jsm",
+          "_captureToCanvas@resource://gre/modules/PageThumbs.jsm",
+          "captureToCanvas@resource://gre/modules/PageThumbs.jsm"
+        ]
+      ],
+
+      "bugs": [1361635]
+    },
+
+    {
+      "signatures": [
+        [
+          "@chrome://browser/content/tab-content.js",
+          "wrapHandlingUserInput@resource:///modules/E10SUtils.jsm",
+          "@chrome://browser/content/tab-content.js"
+        ]
+      ],
+
+      "bugs": [1362529]
+    },
+
+    {
+      "signatures": [
+        [
+          "PT__onDragOver@chrome://browser/content/places/browserPlacesViews.js",
+          "PT_handleEvent@chrome://browser/content/places/browserPlacesViews.js"
+        ]
+      ],
+
+      "bugs": [1362533]
+    },
+
+    {
+      "signatures": [
+        [
+          "_updateTabsVisibilityStatus@chrome://browser/content/tabbrowser.xml",
+          "onxblpopupshowing@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+
+      "bugs": [1362542]
+    },
+
+    {
+      "signatures": [
+        [
+          "_lockTabSizing@chrome://browser/content/tabbrowser.xml",
+          "removeTab@chrome://browser/content/tabbrowser.xml",
+          "onxblclick@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+
+      "bugs": [1362569]
+    },
+
+    {
+      "signatures": [
+        [
+          "openModalWindow@jar/omni.ja!/components/nsPrompter.js",
+          "openPrompt@jar/omni.ja!/components/nsPrompter.js",
+          "confirmCheck@jar/omni.ja!/components/nsPrompter.js",
+          "confirmLaunchExecutable@resource://gre/modules/DownloadUIHelper.jsm",
+          "openDownloadedFile@resource:///modules/DownloadsCommon.jsm",
+          "downloadsCmd_open@chrome://browser/content/downloads/allDownloadsViewOverlay.js",
+          "doCommand@chrome://browser/content/downloads/allDownloadsViewOverlay.js",
+          "doDefaultCommand@chrome://browser/content/downloads/allDownloadsViewOverlay.js",
+          "onKeyPress@chrome://browser/content/downloads/allDownloadsViewOverlay.js",
+          "onkeypress@chrome://browser/content/places/places.xul"
+        ]
+      ],
+
+      "bugs": [1362604]
+    },
+
+    {
+      "signatures": [
+        [
+          "restoreHistory@resource:///modules/sessionstore/ContentRestore.jsm",
+          "restoreHistory@chrome://browser/content/content-sessionStore.js",
+          "receiveMessage@chrome://browser/content/content-sessionStore.js"
+        ]
+      ],
+
+      "bugs": [1362605]
+    },
+
+    {
+      "signatures": [
+        [
+          "onEntered@chrome://global/content/printUtils.js"
+        ]
+      ],
+
+      "bugs": [1362808]
     }
   ]
 }
