@@ -52,6 +52,8 @@ const OhNoReflow = {
 
   init(state, signatureStuff) {
     browser.runtime.onMessage.addListener(this.messageListener.bind(this));
+    browser.commands.onCommand.addListener(this.commandListener.bind(this));
+
     this.threshold = parseFloat(state.threshold, 10);
     if (state.enabled) {
       this.toggle(true);
@@ -64,6 +66,19 @@ const OhNoReflow = {
 
     this.sigData = [];
     this.loadSigData(signatureStuff);
+  },
+
+  commandListener(command) {
+    switch (command) {
+      case "Toggle": {
+        this.toggle(!this.enabled);
+        break;
+      }
+      case "DumpReport": {
+        this.dumpReport();
+        break;
+      }
+    }
   },
 
   messageListener(msg, sender, sendReply) {
@@ -105,6 +120,10 @@ const OhNoReflow = {
         this.ignoreNative = msg.enabled;
         break;
       }
+      case "dumpReport": {
+        this.dumpReport();
+        break;
+      }
     }
   },
 
@@ -136,6 +155,12 @@ const OhNoReflow = {
       browser.browserAction.setIcon({ path });
       this.updateBadge();
     }
+  },
+
+  dumpReport() {
+    browser.tabs.create({
+      url: "/content/report.html",
+    });
   },
 
   _playTimer: null,

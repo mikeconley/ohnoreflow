@@ -50,9 +50,7 @@ const Panel = {
   handleEvent(event) {
     switch(event.originalTarget.id) {
       case "dump-report": {
-        browser.tabs.create({
-          url: "/content/report.html",
-        });
+        browser.runtime.sendMessage({ name: "dumpReport"});
         window.close();
         break;
       }

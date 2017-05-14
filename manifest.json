@@ -22,5 +22,22 @@
     "downloads",
     "experiments.reflow",
     "storage"
-  ]
+  ],
+
+  "commands": {
+    "Toggle": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+9",
+        "mac": "MacCtrl+Shift+9"
+      },
+      "description": "Toggles reflow recording on/off."
+    },
+    "DumpReport": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+0",
+        "mac": "MacCtrl+Shift+0"
+      },
+      "description": "Dumps a reflow report to a new tab."
+    }
+  }
 }
