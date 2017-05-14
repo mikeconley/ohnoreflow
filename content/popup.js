@@ -24,6 +24,11 @@ const Panel = {
     return this.$sound = document.getElementById("sound");
   },
 
+  get $ignoreNative() {
+    delete this.$ignoreNative;
+    return this.$ignoreNative = document.getElementById("ignore-native");
+  },
+
   _threshold: 1.0,
 
   init() {
@@ -31,11 +36,14 @@ const Panel = {
     this.$toggle.addEventListener("click", this);
     this.$threshold.addEventListener("change", this);
     this.$sound.addEventListener("change", this);
-    browser.runtime.sendMessage({ name: "get-state" }).then(({ enabled, threshold, sound }) => {
+    this.$ignoreNative.addEventListener("change", this);
+    browser.runtime.sendMessage({ name: "get-state" }).then((state) => {
+      let { enabled, threshold, sound, ignoreNative } = state;
       this.$controls.setAttribute("enabled", enabled);
       this._threshold = this.$threshold.value = threshold;
       this.$toggle.checked = enabled;
       this.$sound.checked = sound;
+      this.$ignoreNative.checked = ignoreNative;
     });
   },
 
@@ -65,6 +73,13 @@ const Panel = {
       case "sound": {
         let enabled = event.originalTarget.checked;
         browser.runtime.sendMessage({ name: "sound", enabled });
+        break;
+      }
+
+      case "ignore-native": {
+        let enabled = event.originalTarget.checked;
+        browser.runtime.sendMessage({ name: "ignoreNative", enabled });
+        break;
       }
     }
   },

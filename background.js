@@ -37,12 +37,14 @@ const OhNoReflow = {
   },
 
   sound: false,
+  ignoreNative: true,
 
   saveState() {
     let state = {
       enabled: this.enabled,
       threshold: this.threshold,
       sound: this.sound,
+      ignoreNative: this.ignoreNative,
     };
 
     browser.storage.local.set({ state });
@@ -56,6 +58,10 @@ const OhNoReflow = {
     }
 
     this.sound = !!state.sound;
+    if (state.ignoreNative !== undefined) {
+      this.ignoreNative = !!state.ignoreNative;
+    }
+
     this.sigData = [];
     this.loadSigData(signatureStuff);
   },
@@ -75,7 +81,12 @@ const OhNoReflow = {
         break;
       }
       case "get-state": {
-        sendReply({ enabled: this.enabled, threshold: this.threshold, sound: this.sound });
+        sendReply({
+          enabled: this.enabled,
+          threshold: this.threshold,
+          sound: this.sound,
+          ignoreNative: this.ignoreNative,
+        });
         break;
       }
       case "toggle": {
@@ -90,10 +101,18 @@ const OhNoReflow = {
         this.sound = msg.enabled;
         break;
       }
+      case "ignoreNative": {
+        this.ignoreNative = msg.enabled;
+        break;
+      }
     }
   },
 
   reflow(reflowData) {
+    if (this.ignoreNative && !reflowData.stack) {
+      return;
+    }
+
     let totalTime = (reflowData.stop - reflowData.start).toFixed(2);
     if (totalTime >= this.threshold) {
       this.reflowLog.push(reflowData);
