@@ -1674,6 +1674,100 @@
       ],
 
       "bugs": [1362808]
+    },
+
+    {
+      "signatures": [
+        [
+          "attach/<@resource:///modules/ExtensionPopups.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm"
+        ]
+      ],
+
+      "bugs": [1363265, 1358881]
+    },
+
+    {
+      "signatures": [
+        [
+          "insertPlaceholder@resource://app/modules/DragPositionManager.jsm",
+          "_setGridDragActive@resource://app/modules/CustomizeMode.jsm",
+          "_setDragActive@resource://app/modules/CustomizeMode.jsm",
+          "_onDragStart/this._initializeDragAfterMove@resource://app/modules/CustomizeMode.jsm",
+          "_onDragOver@resource://app/modules/CustomizeMode.jsm",
+          "handleEvent@resource://app/modules/CustomizeMode.jsm",
+          "EventListener.handleEvent*_addDragHandlers@resource://app/modules/CustomizeMode.jsm",
+          "enter/<@resource://app/modules/CustomizeMode.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "deferredWrapToolbarItem/</<@resource://app/modules/CustomizeMode.jsm"
+        ]
+      ],
+
+      "bugs": [1364290]
+    },
+
+    {
+      "signatures": [
+        [
+          "waitForSyncCallback@resource://gre/modules/services-common/async.js",
+          "makeSpinningCallback/callback.wait@resource://gre/modules/services-common/async.js",
+          "promiseSpinningly@resource://gre/modules/services-common/async.js",
+          "_fetchServerConfiguration@resource://services-sync/service.js",
+          "_remoteSetup@resource://services-sync/service.js",
+          "sync@resource://services-sync/stages/enginesync.js",
+          "onNotify@resource://services-sync/service.js",
+          "WrappedNotify@resource://services-sync/util.js",
+          "WrappedLock@resource://services-sync/util.js",
+          "_lockedSync@resource://services-sync/service.js",
+          "sync/<@resource://services-sync/service.js",
+          "WrappedCatch@resource://services-sync/util.js",
+          "sync@resource://services-sync/service.js"
+        ]
+      ],
+
+      "bugs": [1364323]
+    },
+
+    {
+      "signatures": [
+        [
+          "AreaPositionManager@resource://app/modules/DragPositionManager.jsm",
+          "start@resource://app/modules/DragPositionManager.jsm",
+          "_onDragStart/this._initializeDragAfterMove@resource://app/modules/CustomizeMode.jsm",
+          "_onDragOver@resource://app/modules/CustomizeMode.jsm",
+          "handleEvent@resource://app/modules/CustomizeMode.jsm",
+          "EventListener.handleEvent*_addDragHandlers@resource://app/modules/CustomizeMode.jsm",
+          "enter/<@resource://app/modules/CustomizeMode.jsm",
+          "TaskImpl_run@resource://gre/modules/Task.jsm",
+          "process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "Promise*scheduleWalkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "schedulePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "completePromise@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js",
+          "deferredWrapToolbarItem/</<@resource://app/modules/CustomizeMode.jsm"
+        ]
+      ],
+
+      "bugs": [1364324]
+    },
+
+    {
+      "signatures": [
+        [
+          "gotoPref@chrome://browser/content/preferences/in-content/preferences.js",
+          "init_all/<@chrome://browser/content/preferences/in-content/preferences.js",
+          "_fireOnSelect@chrome://global/content/bindings/richlistbox.xml",
+          "selectItem@chrome://global/content/bindings/listbox.xml",
+          "onxblmousedown@chrome://global/content/bindings/listbox.xml"
+        ]
+      ],
+
+      "bugs": [1364360]
     }
   ]
 }
