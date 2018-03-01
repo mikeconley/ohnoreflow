@@ -20,9 +20,19 @@
   },
   "permissions": [
     "downloads",
-    "experiments.reflow",
     "storage"
   ],
+
+  "experiment_apis": {
+    "reflows": {
+      "schema": "api/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "script": "api/api.js",
+        "paths": [["reflows"]]
+      }
+    }
+  },
 
   "commands": {
     "Toggle": {

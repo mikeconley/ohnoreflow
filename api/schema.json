@@ -1,0 +1,43 @@
+[
+  {
+    "namespace": "reflows",
+    "events": [
+      {
+        "name": "onUninterruptableReflow",
+        "type": "function",
+        "description": "Fired when an uninterruptible reflow occurs in the browser chrome of a window.",
+        "filters": [
+          {
+            "name": "windowTypes",
+            "type": "array",
+            "items": { "$ref": "WindowType" },
+            "description": "Conditions that the window's type being watched must satisfy. By default it will satisfy <code>['app', 'normal', 'panel', 'popup']</code>, with <code>'app'</code> and <code>'panel'</code> window types limited to the extension's own windows."
+          }
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "windowId",
+            "minimum": -1,
+            "description": "ID of the window that experienced the uninterruptible reflow."
+          },
+          {
+            "$ref": "extensionTypes.Date",
+            "name": "start",
+            "description": "The time that the reflow started."
+          },
+          {
+            "$ref": "extensionTypes.Date",
+            "name": "end",
+            "description": "The time that the reflow ended."
+          },
+          {
+            "type": "string",
+            "name": "stack",
+            "description": "The stack for the JavaScript that caused the uninterruptible reflow."
+          }
+        ]
+      }
+    ]
+  }
+]
