@@ -35,7 +35,7 @@ this.reflows = class extends ExtensionAPI {
                 if (!stack) {
                   let debug = Cc["@mozilla.org/xpcom/debug;1"].getService(Ci.nsIDebug2);
                   if (debug.isDebuggerAttached) {
-                    debug.break("api.js", 51);
+                    debug.break("api.js", -1);
                   }
                 }
 
