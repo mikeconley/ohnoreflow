@@ -4,6 +4,13 @@ function reflowListener(windowId, start, stop, stack) {
   });
 }
 
+const DEFAULT_STATE = {
+  enabled: true,
+  threshold: "1.0",
+  sound: false,
+  ignoreNative: true,
+};
+
 const OhNoReflow = {
   reflowLog: [],
 
@@ -194,7 +201,7 @@ const OhNoReflow = {
 browser.storage.local.get("state").then(result => {
   window.fetch("docs/signatures.json").then((response) => {
     response.json().then((sigs) => {
-      OhNoReflow.init(result.state, sigs);
+      OhNoReflow.init(result.state || DEFAULT_STATE, sigs);
     });
   });
 });
