@@ -37,27 +37,26 @@ const ReflowReport = {
     return this.$hideRowsWithBugs = document.getElementById("hide-rows-with-bugs");
   },
 
-  init() {
+  async init() {
     this.$reset.addEventListener("click", this);
     this.$save.addEventListener("click", this);
     this.$load.addEventListener("click", this);
     this.$loadInput.addEventListener("change", this);
     this.$hideRowsWithBugs.addEventListener("click", this);
 
-    browser.runtime.sendMessage({ name: "get-signature-data" }).then(sigData => {
-      browser.runtime.sendMessage({ name: "get-reflows" }).then(reflows => {
-        if (!reflows || reflows.length == 0) {
-          this.$status.textContent = "No reflows detected. Hooray!";
-        } else {
-          this.reflows = reflows;
-          this.injectReport(reflows, sigData);
-          this.$status.textContent = "Sorted from most recent to least.";
-        }
-      });
-    });
+    let browserInfo = await browser.runtime.getBrowserInfo();
+    let sigData = await browser.runtime.sendMessage({ name: "get-signature-data" });
+    let reflows = await browser.runtime.sendMessage({ name: "get-reflows" });
+    if (!reflows || reflows.length == 0) {
+      this.$status.textContent = "No reflows detected. Hooray!";
+    } else {
+      this.reflows = reflows;
+      this.injectReport(reflows, sigData, browserInfo);
+      this.$status.textContent = "Sorted from most recent to least.";
+    }
   },
 
-  injectReport(reflows, sigData) {
+  injectReport(reflows, sigData, browserInfo) {
     this.$tableBody.innerHTML = "";
 
     let frag = document.createDocumentFragment();
@@ -95,7 +94,7 @@ const ReflowReport = {
           return line.replace(/:\d+:\d+$/, "");
         });
 
-        let uri = this.fileABugURI(reflow);
+        let uri = this.fileABugURI(reflow, browserInfo);
         let fileABugAnchor = document.createElement("a");
         fileABugAnchor.href = uri;
         fileABugAnchor.target = "_blank";
@@ -221,11 +220,13 @@ const ReflowReport = {
     reader.readAsText(file);
   },
 
-  fileABugURI(reflow) {
+  fileABugURI(reflow, browserInfo) {
     let time = encodeURIComponent((reflow.stop - reflow.start).toFixed(2) + "ms ");
     let topFrame = encodeURIComponent(reflow.stack.split("\n")[0]);
     let fullStack = encodeURIComponent(reflow.stack);
-    let uri = `https://bugzilla.mozilla.org/enter_bug.cgi?assigned_to=nobody%40mozilla.org&bug_file_loc=http%3A%2F%2F&bug_ignored=0&bug_severity=normal&bug_status=NEW&cf_fx_iteration=---&cf_fx_points=---&cf_platform_rel=---&cf_status_firefox52=---&cf_status_firefox53=---&cf_status_firefox54=---&cf_status_firefox55=---&cf_status_firefox_esr45=---&cf_status_firefox_esr52=---&cf_tracking_firefox52=---&cf_tracking_firefox53=---&cf_tracking_firefox54=---&cf_tracking_firefox55=---&cf_tracking_firefox_esr45=---&cf_tracking_firefox_esr52=---&cf_tracking_firefox_relnote=---&comment=Here%27s%20the%20stack%3A%0D%0A%0D%0A${fullStack}&component=Untriaged&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&defined_groups=1&flag_type-203=X&flag_type-37=X&flag_type-41=X&flag_type-5=X&flag_type-607=X&flag_type-720=X&flag_type-721=X&flag_type-737=X&flag_type-748=X&flag_type-781=X&flag_type-787=X&flag_type-799=X&flag_type-800=X&flag_type-803=X&flag_type-835=X&flag_type-846=X&flag_type-855=X&flag_type-864=X&flag_type-905=X&flag_type-914=X&flag_type-916=X&form_name=enter_bug&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Unspecified&priority=--&product=Firefox&rep_platform=Unspecified&short_desc=${time}uninterruptible%20reflow%20at%20${topFrame}&status_whiteboard=%5Bohnoreflow%5D%5Bfxperf%5D&target_milestone=---&version=unspecified`;
+    let version = encodeURIComponent(browserInfo.version);
+    let buildID = encodeURIComponent(browserInfo.buildID);
+    let uri = `https://bugzilla.mozilla.org/enter_bug.cgi?assigned_to=nobody%40mozilla.org&bug_file_loc=http%3A%2F%2F&bug_ignored=0&bug_severity=normal&bug_status=NEW&cf_fx_iteration=---&cf_fx_points=---&cf_platform_rel=---&cf_status_firefox52=---&cf_status_firefox53=---&cf_status_firefox54=---&cf_status_firefox55=---&cf_status_firefox_esr45=---&cf_status_firefox_esr52=---&cf_tracking_firefox52=---&cf_tracking_firefox53=---&cf_tracking_firefox54=---&cf_tracking_firefox55=---&cf_tracking_firefox_esr45=---&cf_tracking_firefox_esr52=---&cf_tracking_firefox_relnote=---&comment=Here%27s%20the%20stack%3A%0D%0A%0D%0A${fullStack}%0D%0A%0D%0AVersion%3A%20${version}%0D%0ABuild%3A%20${buildID}&component=Untriaged&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&defined_groups=1&flag_type-203=X&flag_type-37=X&flag_type-41=X&flag_type-5=X&flag_type-607=X&flag_type-720=X&flag_type-721=X&flag_type-737=X&flag_type-748=X&flag_type-781=X&flag_type-787=X&flag_type-799=X&flag_type-800=X&flag_type-803=X&flag_type-835=X&flag_type-846=X&flag_type-855=X&flag_type-864=X&flag_type-905=X&flag_type-914=X&flag_type-916=X&form_name=enter_bug&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Unspecified&priority=--&product=Firefox&rep_platform=Unspecified&short_desc=${time}uninterruptible%20reflow%20at%20${topFrame}&status_whiteboard=%5Bohnoreflow%5D%5Bfxperf%5D&target_milestone=---&version=unspecified`;
     return uri;
   },
 
