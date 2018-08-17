@@ -1920,6 +1920,19 @@
       ],
 
       "bugs": [1483452]
+    },
+
+    {
+      "signatures": [
+        [
+          "_calculateMaxHeight@resource:///modules/PanelMultiView.jsm",
+          "handleEvent@resource:///modules/PanelMultiView.jsm",
+          "EventListener.handleEvent*connect@resource:///modules/PanelMultiView.jsm",
+          "openPopup/this._openPopupPromise<@resource:///modules/PanelMultiView.jsm"
+        ]
+      ],
+
+      "bugs": [1462373]
     }
   ]
 }
