@@ -1,5 +1,5 @@
 {
-  "updated": "2017-04-21T00:00:00.000Z",
+  "updated": "2018-08-17T00:00:00.000Z",
   "version": 1,
   "data": [
     {
@@ -1768,6 +1768,158 @@
       ],
 
       "bugs": [1364360]
+    },
+
+    {
+      "signatures": [
+        [
+          "onxblunderflow@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+      "bugs": [1482654]
+    },
+
+    {
+      "signatures": [
+        [
+          "_getDragItemSize@resource:///modules/CustomizeMode.jsm",
+          "_setGridDragActive@resource:///modules/CustomizeMode.jsm",
+          "_setDragActive@resource:///modules/CustomizeMode.jsm",
+          "_onDragStart/this._initializeDragAfterMove@resource:///modules/CustomizeMode.jsm",
+          "_onDragOver@resource:///modules/CustomizeMode.jsm",
+          "handleEvent@resource:///modules/CustomizeMode.jsm"
+        ]
+      ],
+      "bugs": [1482669]
+    },
+
+    {
+      "signatures": [
+        [
+          "recreatePopup@resource:///modules/UITour.jsm",
+          "onPanelHidden@resource:///modules/UITour.jsm",
+          "_delayedStartup/<@chrome://browser/content/browser.js",
+          "updateCurrentBrowser@chrome://browser/content/tabbrowser.js",
+          "_setupEventListeners/<@chrome://browser/content/tabbrowser.js",
+          "set_selectedIndex@chrome://global/content/bindings/tabbox.xml",
+          "set_selectedPanel@chrome://global/content/bindings/tabbox.xml",
+          "set_selectedIndex@chrome://global/content/bindings/tabbox.xml",
+          "set_selectedItem@chrome://global/content/bindings/tabbox.xml",
+          "_selectNewTab@chrome://global/content/bindings/tabbox.xml",
+          "onxblmousedown@chrome://global/content/bindings/tabbox.xml"
+        ]
+      ],
+      "bugs": [1482670]
+    },
+
+    {
+      "signatures": [
+        [
+          "showHighlightElement@resource:///modules/UITour.jsm",
+          "showHighlight@resource:///modules/UITour.jsm"
+        ]
+      ],
+      "bugs": [1482671]
+    },
+
+    {
+      "signatures": [
+        [
+          "onxbldragover@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+      "bugs": [1482734]
+    },
+
+    {
+      "signatures": [
+        [
+          "_positionPinnedTabs@chrome://browser/content/tabbrowser.xml",
+          "onxbloverflow@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+      "bugs": [1365305]
+    },
+
+    {
+      "signatures": [
+        [
+          "debug@resource://devtools/shared/base-loader.js -> resource://devtools/client/aboutdebugging/components/tabs/Target.js",
+          "invokeGuardedCallback@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "invokeGuardedCallback@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "invokeGuardedCallbackAndCatchFirstError@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "executeDispatch@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "executeDispatchesInOrder@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "executeDispatchesAndRelease@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "executeDispatchesAndReleaseTopLevel@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "forEachAccumulated@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "runEventsInBatch@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "runExtractedEventsInBatch@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "handleTopLevel@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "batchedUpdates$1@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "batchedUpdates@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "dispatchEvent@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "interactiveUpdates$1@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "interactiveUpdates@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js",
+          "dispatchInteractiveEvent@resource://devtools/shared/base-loader.js -> resource://devtools/client/shared/vendor/react-dom.js"
+        ]
+      ],
+      "bugs": [1483262]
+    },
+
+    {
+      "signatures": [
+        [
+          "adjustArrowPosition@chrome://global/content/bindings/popup.xml",
+          "onxblpopuppositioned@chrome://global/content/bindings/popup.xml"
+        ]
+      ],
+
+      "bugs": [1483264]
+    },
+
+    {
+      "signatures": [
+        [
+          "showTooltip@chrome://browser/content/browser.js"
+        ]
+      ],
+
+      "bugs": [1483268]
+    },
+
+    {
+      "signatures": [
+        [
+          "attach@resource:///modules/ExtensionPopups.jsm"
+        ]
+      ],
+
+      "bugs": [1483272]
+    },
+
+    {
+      "signatures": [
+        [
+          "get_scrollClientRect@chrome://global/content/bindings/scrollbox.xml",
+          "_notifyBackgroundTab@chrome://browser/content/tabbrowser.xml",
+          "_handleNewTab@chrome://browser/content/tabbrowser.xml",
+          "onxbltransitionend@chrome://browser/content/tabbrowser.xml"
+        ]
+      ],
+
+      "bugs": [1483354]
+    },
+
+    {
+      "signatures": [
+        [
+          "collectItems@resource:///modules/PanelMultiView.jsm",
+          "descriptionHeightWorkaround@resource:///modules/PanelMultiView.jsm"
+        ]
+      ],
+
+      "bugs": [1483452]
     }
   ]
 }
