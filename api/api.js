@@ -43,8 +43,8 @@ this.reflows = class extends ExtensionAPI {
                 fire.async(id, start, end, stack);
               },
               reflowInterruptible(start, end) {},
-              QueryInterface: XPCOMUtils.generateQI([Ci.nsIReflowObserver,
-                                                     Ci.nsISupportsWeakReference])
+              QueryInterface: ChromeUtils.generateQI([Ci.nsIReflowObserver,
+                                                      Ci.nsISupportsWeakReference])
             };
 
             let docShell = win.QueryInterface(Ci.nsIInterfaceRequestor)
