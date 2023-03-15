@@ -3,7 +3,9 @@ Oh no! Reflow! is a WebExtension to help front-end Firefox engineers detect unin
 
 # Installation
 
-Visit the [docs/](https://mikeconley.github.io/ohnoreflow/) page for installation instructions and links.
+1. You may need to set `xpinstall.signatures.required` to `false` and `extensions.experiments.enabled` to `true` in `about:config` in order to install.
+2. Click here to download [Oh no! Reflow!](https://raw.githubusercontent.com/mikeconley/ohnoreflow/master/ohnoreflow.xpi)
+3. Go to `about:addons`, and click "Install Add-on From File", and then via the file picker, find the `ohnoreflow.xpi` you downloaded.
 
 # TODO
 * Add ability to coalesce similar stacks
