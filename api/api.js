@@ -2,12 +2,11 @@ const { classes: Cc, interfaces: Ci, utils: Cu } = Components;
 
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 
-XPCOMUtils.defineLazyModuleGetter(this, "ExtensionUtils",
-                                  "resource://gre/modules/ExtensionUtils.jsm");
-XPCOMUtils.defineLazyModuleGetter(this, "ExtensionCommon",
-                                  "resource://gre/modules/ExtensionCommon.jsm");
-XPCOMUtils.defineLazyModuleGetter(this, "ExtensionParent",
-                                  "resource://gre/modules/ExtensionParent.jsm");
+ChromeUtils.defineESModuleGetters(this, {
+  ExtensionCommon: "resource://gre/modules/ExtensionCommon.sys.mjs",
+  ExtensionParent: "resource://gre/modules/ExtensionParent.sys.mjs",
+  ExtensionUtils: "resource://gre/modules/ExtensionUtils.sys.mjs",
+});
 
 this.reflows = class extends ExtensionAPI {
   getAPI(context) {
@@ -23,9 +22,13 @@ this.reflows = class extends ExtensionAPI {
         onUninterruptableReflow: new EventManager({
           context,
           name: "reflow-api",
-          register: fire => {
-            const windowTracker = ExtensionParent.apiManager.global.windowTracker;
-            let windows = Array.from(windowManager.getAll(), win => win.window);
+          register: (fire) => {
+            const windowTracker =
+              ExtensionParent.apiManager.global.windowTracker;
+            let windows = Array.from(
+              windowManager.getAll(),
+              (win) => win.window
+            );
 
             let observeWindow = (win) => {
               let observer = {
@@ -35,7 +38,9 @@ this.reflows = class extends ExtensionAPI {
                   // If the stack string is empty, and a debugger is attached, try to
                   // hit a breakpoint.
                   if (!stack) {
-                    let debug = Cc["@mozilla.org/xpcom/debug;1"].getService(Ci.nsIDebug2);
+                    let debug = Cc["@mozilla.org/xpcom/debug;1"].getService(
+                      Ci.nsIDebug2
+                    );
                     if (debug.isDebuggerAttached) {
                       debug.break("api.js", -1);
                     }
@@ -45,8 +50,10 @@ this.reflows = class extends ExtensionAPI {
                   fire.async(id, start, end, stack);
                 },
                 reflowInterruptible(start, end) {},
-                QueryInterface: ChromeUtils.generateQI([Ci.nsIReflowObserver,
-                                                        Ci.nsISupportsWeakReference])
+                QueryInterface: ChromeUtils.generateQI([
+                  Ci.nsIReflowObserver,
+                  Ci.nsISupportsWeakReference,
+                ]),
               };
 
               win.docShell.addWeakReflowObserver(observer);
@@ -60,13 +67,16 @@ this.reflows = class extends ExtensionAPI {
 
             let windowOpenListener = (win) => {
               observeWindow(win);
-            }
+            };
 
             windowTracker.addListener("domwindowopened", windowOpenListener);
             windows = [];
 
             return () => {
-              let windows = Array.from(windowManager.getAll(), win => win.window);
+              let windows = Array.from(
+                windowManager.getAll(),
+                (win) => win.window
+              );
               for (let win of windows) {
                 let observer = windowMap.get(win);
                 if (observer) {
@@ -76,12 +86,14 @@ this.reflows = class extends ExtensionAPI {
                 windowMap.delete(win);
               }
 
-              windowTracker.removeListener("domwindowopened", windowOpenListener);
-            }
-          }
-        }).api()
-      }
+              windowTracker.removeListener(
+                "domwindowopened",
+                windowOpenListener
+              );
+            };
+          },
+        }).api(),
+      },
     };
   }
-}
-
+};

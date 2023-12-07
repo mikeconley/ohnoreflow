@@ -1,12 +1,15 @@
 function reflowListener(windowId, start, stop, stack) {
   OhNoReflow.reflow({
-    windowId, start, stop, stack
+    windowId,
+    start,
+    stop,
+    stack,
   });
 }
 
 const DEFAULT_STATE = {
   enabled: true,
-  threshold: "1.0",
+  threshold: "0.0",
   sound: false,
   ignoreNative: true,
 };
@@ -89,7 +92,7 @@ const OhNoReflow = {
   },
 
   messageListener(msg, sender, sendReply) {
-    switch(msg.name) {
+    switch (msg.name) {
       case "get-reflows": {
         sendReply(this.reflowLog);
         break;
@@ -196,9 +199,9 @@ const OhNoReflow = {
       this.sigData.push({ bugs, signatures });
     }
   },
-}
+};
 
-browser.storage.local.get("state").then(result => {
+browser.storage.local.get("state").then((result) => {
   window.fetch("docs/signatures.json").then((response) => {
     response.json().then((sigs) => {
       OhNoReflow.init(result.state || DEFAULT_STATE, sigs);
